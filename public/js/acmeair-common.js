@@ -50,6 +50,7 @@ function updateLoggedInUserWelcome() {
 function login() {
 	hideLoginDialog();
 	showLoginWaitDialog();
+	performRandomCalculation()
 	
 	var userString = document.getElementById('userId').value;
 	dojo.xhrPost({
@@ -73,6 +74,22 @@ function login() {
 			alert('error logging in, response: ' + response);
 		}
 	});
+}
+
+function performRandomCalculation() {
+	var firstBatch = [];
+	var secondBatch = [];
+	for (i=0; i<1000; i++) {
+		firstBatch[i] = Math.random()
+		secondBatch[i] = Math.random()
+	}
+	firstBatch.sort(function(a,b){return a - b});
+	secondBatch.sort(function(a,b){return a - b});
+	
+	var res = 0.0;
+	for (i=0; i<1000; i++) {
+		res = res + firstBatch[i]*secondBatch[i]/0.36542
+	}	
 }
 
 function logout() {
