@@ -88,7 +88,7 @@ function performRandomCalculation() {
 	
 	var res = 0.0;
 	for (i=0; i<1000; i++) {
-		res = res + firstBatch[i]*secondBatch[i]/0.36542
+		res = res + firstBatch[i]*secondBatch[i]/0.36542;
 	}	
 }
 
